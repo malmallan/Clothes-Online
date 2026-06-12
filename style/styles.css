@@ -1,0 +1,1985 @@
+/* ============================================================
+   TrendWear Fashion — Custom Design System
+   Palette: Espresso + Warm Gold + Cream
+   Fonts: Cormorant Garamond (display) + Jost (body)
+   ============================================================ */
+
+:root {
+  --tw-espresso: #2c1810;
+  --tw-espresso-light: #3d2b1f;
+  --tw-gold: #c9a96e;
+  --tw-gold-dark: #b8924f;
+  --tw-gold-light: #e3cfa3;
+  --tw-cream: #f5f0e8;
+  --tw-cream-dark: #ede5d5;
+  --tw-bg: #faf8f5;
+  --tw-white: #ffffff;
+  --tw-text: #1a1105;
+  --tw-text-muted: #7a6652;
+  --tw-border: #e8dfd0;
+  --tw-shadow: rgba(44, 24, 16, 0.08);
+  --tw-shadow-md: rgba(44, 24, 16, 0.14);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+.tw-body {
+  font-family: 'Jost', sans-serif;
+  background-color: var(--tw-bg);
+  color: var(--tw-text);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--tw-espresso);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.tw-btn-gold {
+  background-color: var(--tw-gold);
+  border-color: var(--tw-gold);
+  color: var(--tw-espresso);
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  border-radius: 2px;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.tw-btn-gold:hover,
+.tw-btn-gold:focus {
+  background-color: var(--tw-gold-dark);
+  border-color: var(--tw-gold-dark);
+  color: var(--tw-espresso);
+  transform: translateY(-1px);
+}
+
+.tw-btn-outline-dark {
+  background-color: transparent;
+  border: 1.5px solid var(--tw-espresso);
+  color: var(--tw-espresso);
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  border-radius: 2px;
+  transition: background-color 0.2s, color 0.2s, transform 0.15s;
+}
+.tw-btn-outline-dark:hover {
+  background-color: var(--tw-espresso);
+  color: var(--tw-cream);
+  transform: translateY(-1px);
+}
+
+.tw-btn-outline-cream {
+  background-color: transparent;
+  border: 1.5px solid rgba(245, 240, 232, 0.6);
+  color: var(--tw-cream);
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  border-radius: 2px;
+  transition: background-color 0.2s, color 0.2s, transform 0.15s;
+}
+.tw-btn-outline-cream:hover {
+  background-color: rgba(245, 240, 232, 0.15);
+  color: var(--tw-cream);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.tw-navbar {
+  background-color: var(--tw-espresso);
+  padding: 0.85rem 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tw-brand {
+  text-decoration: none;
+  gap: 0.6rem !important;
+}
+
+.tw-brand-icon {
+  color: var(--tw-gold);
+}
+
+.tw-brand-name {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--tw-cream);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.tw-brand-tag {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--tw-gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.tw-nav-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(245, 240, 232, 0.8) !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem !important;
+  position: relative;
+  transition: color 0.2s;
+}
+.tw-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 1.5px;
+  background-color: var(--tw-gold);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.tw-nav-link:hover,
+.tw-nav-link.active {
+  color: var(--tw-cream) !important;
+}
+.tw-nav-link:hover::after,
+.tw-nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  color: var(--tw-cream);
+  padding: 0.25rem 0.5rem;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler svg {
+  color: var(--tw-cream);
+}
+
+/* Mobile nav */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: var(--tw-espresso-light);
+    margin-top: 0.75rem;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+  .tw-nav-link::after {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Hero Section
+   ============================================================ */
+.tw-hero {
+  background-color: var(--tw-espresso);
+  position: relative;
+  overflow: hidden;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0 4rem;
+}
+
+.tw-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 70% 50%,
+      rgba(201, 169, 110, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(201, 169, 110, 0.06) 0%,
+      transparent 40%
+    );
+}
+
+.min-vh-hero {
+  min-height: 78vh;
+}
+
+.tw-hero-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tw-gold);
+  margin-bottom: 1.2rem;
+}
+
+.tw-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  color: var(--tw-cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.tw-hero-brand {
+  color: var(--tw-gold);
+  font-style: italic;
+}
+
+.tw-hero-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.72);
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+.tw-hero-img-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tw-hero-img {
+  width: 100%;
+  max-width: 440px;
+  height: 540px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.tw-hero-badge {
+  position: absolute;
+  bottom: -16px;
+  left: -20px;
+  background-color: var(--tw-gold);
+  color: var(--tw-espresso);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.4);
+}
+
+.tw-hero-badge-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tw-hero-badge-txt {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tw-hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tw-scroll-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--tw-gold);
+  border-radius: 50%;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.4; }
+}
+
+/* ============================================================
+   Features Strip
+   ============================================================ */
+.tw-features-strip {
+  background-color: var(--tw-cream-dark);
+  border-top: 1px solid var(--tw-border);
+  border-bottom: 1px solid var(--tw-border);
+}
+
+.tw-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1.25rem 1.5rem;
+  border-right: 1px solid var(--tw-border);
+}
+.tw-feature-item:last-child {
+  border-right: none;
+}
+
+@media (max-width: 767px) {
+  .tw-feature-item {
+    border-right: none;
+    border-bottom: 1px solid var(--tw-border);
+    padding: 1rem;
+  }
+  .tw-feature-item:last-child {
+    border-bottom: none;
+  }
+}
+
+.tw-feature-icon {
+  color: var(--tw-gold);
+  flex-shrink: 0;
+}
+
+.tw-feature-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-feature-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.76rem;
+  color: var(--tw-text-muted);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Sections — General
+   ============================================================ */
+.tw-section {
+  padding: 5rem 0;
+}
+
+.tw-section-header {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+}
+
+.tw-section-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tw-gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.tw-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 1rem;
+}
+
+.tw-section-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: var(--tw-text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   Product Card
+   ============================================================ */
+.tw-product-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.tw-product-card:hover {
+  box-shadow: 0 8px 30px var(--tw-shadow-md);
+  transform: translateY(-3px);
+}
+
+.tw-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.tw-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.tw-product-card:hover .tw-card-img {
+  transform: scale(1.04);
+}
+
+.tw-category-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: var(--tw-gold);
+  color: var(--tw-espresso);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+}
+
+.tw-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.tw-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 0;
+}
+
+.tw-card-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.83rem;
+  color: var(--tw-text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.tw-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--tw-espresso);
+}
+
+/* ============================================================
+   Category Cards
+   ============================================================ */
+.tw-categories-section {
+  background-color: var(--tw-cream);
+  padding: 5rem 0;
+}
+
+.tw-category-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+}
+
+.tw-category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.tw-category-card:hover .tw-category-img {
+  transform: scale(1.06);
+}
+
+.tw-category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(44, 24, 16, 0.8) 0%,
+    rgba(44, 24, 16, 0.2) 60%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+}
+
+.tw-category-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--tw-cream);
+  margin-bottom: 0.2rem;
+}
+
+.tw-category-count {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--tw-gold-light);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   CTA Section
+   ============================================================ */
+.tw-cta-section {
+  background-color: var(--tw-espresso);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.tw-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(201, 169, 110, 0.07) 0%,
+    transparent 70%
+  );
+}
+
+.tw-cta-inner {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.tw-cta-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tw-gold);
+  margin-bottom: 1rem;
+}
+
+.tw-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--tw-cream);
+  margin-bottom: 1rem;
+}
+
+.tw-cta-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.65);
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   Page Header
+   ============================================================ */
+.tw-page-header {
+  background-color: var(--tw-espresso);
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.tw-page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--tw-gold);
+}
+
+.tw-page-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--tw-gold);
+  margin-bottom: 0.75rem;
+}
+
+.tw-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--tw-cream);
+  margin-bottom: 1rem;
+}
+
+.tw-page-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   Products Filter Bar
+   ============================================================ */
+.tw-filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+}
+
+.tw-filter-icon {
+  color: var(--tw-text-muted);
+}
+
+.tw-filter-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--tw-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tw-filter-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--tw-text-muted);
+  background-color: var(--tw-white);
+  border: 1.5px solid var(--tw-border);
+  border-radius: 2px;
+  padding: 0.35rem 0.9rem;
+  transition: all 0.18s;
+}
+.tw-filter-btn:hover {
+  border-color: var(--tw-gold);
+  color: var(--tw-espresso);
+}
+.tw-filter-btn.active {
+  background-color: var(--tw-espresso);
+  border-color: var(--tw-espresso);
+  color: var(--tw-cream);
+}
+
+.tw-filter-count {
+  font-size: 0.72rem;
+  opacity: 0.65;
+}
+
+.tw-results-count {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  color: var(--tw-text-muted);
+}
+
+.tw-empty-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--tw-espresso);
+}
+.tw-empty-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: var(--tw-text-muted);
+}
+
+/* ============================================================
+   Product Modal
+   ============================================================ */
+.tw-modal-backdrop {
+  background-color: rgba(26, 17, 5, 0.65);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+}
+
+.tw-modal-content {
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.tw-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background-color: var(--tw-espresso);
+  color: var(--tw-cream);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 0.2s;
+}
+.tw-modal-close:hover {
+  background-color: var(--tw-gold-dark);
+  color: var(--tw-espresso);
+}
+
+.tw-modal-img-wrap {
+  position: relative;
+  height: 100%;
+  min-height: 360px;
+}
+
+.tw-modal-img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.tw-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-modal-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tw-gold-dark);
+}
+
+.tw-modal-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: var(--tw-text-muted);
+  line-height: 1.7;
+}
+
+.tw-detail-icon {
+  color: var(--tw-gold-dark);
+  flex-shrink: 0;
+}
+
+.tw-detail-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tw-espresso);
+}
+
+.tw-size-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--tw-text-muted);
+  background-color: transparent;
+  border: 1.5px solid var(--tw-border);
+  border-radius: 2px;
+  width: 44px;
+  height: 36px;
+  padding: 0;
+  transition: all 0.15s;
+}
+.tw-size-btn:hover {
+  border-color: var(--tw-espresso);
+  color: var(--tw-espresso);
+}
+.tw-size-btn.active {
+  background-color: var(--tw-espresso);
+  border-color: var(--tw-espresso);
+  color: var(--tw-cream);
+}
+
+.tw-color-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--tw-text-muted);
+  background-color: var(--tw-cream);
+  border: 1.5px solid var(--tw-border);
+  border-radius: 2px;
+  padding: 0.3rem 0.75rem;
+  transition: all 0.15s;
+}
+.tw-color-btn:hover {
+  border-color: var(--tw-gold);
+  color: var(--tw-espresso);
+}
+.tw-color-btn.active {
+  background-color: var(--tw-espresso);
+  border-color: var(--tw-espresso);
+  color: var(--tw-gold-light);
+}
+
+.tw-specs-box {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.tw-spec-label {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tw-text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.tw-spec-value {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--tw-espresso);
+}
+
+.tw-instock {
+  color: #2e7d51;
+  font-weight: 600;
+}
+
+/* ============================================================
+   About Page
+   ============================================================ */
+.tw-about-img-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tw-about-img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 4px;
+  box-shadow: 0 12px 40px var(--tw-shadow-md);
+}
+
+.tw-about-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  background-color: var(--tw-gold);
+  color: var(--tw-espresso);
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(201, 169, 110, 0.35);
+}
+
+.tw-about-badge-year {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tw-about-badge-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.tw-about-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: var(--tw-text-muted);
+  line-height: 1.75;
+}
+
+.tw-mission-card {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-left: 3px solid var(--tw-gold);
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+.tw-mission-icon-wrap,
+.tw-vision-icon-wrap {
+  background-color: var(--tw-espresso);
+  color: var(--tw-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tw-vision-icon-wrap {
+  background-color: var(--tw-gold);
+  color: var(--tw-espresso);
+}
+
+.tw-mission-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tw-espresso);
+  margin-bottom: 0.35rem;
+}
+
+.tw-mission-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  color: var(--tw-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.tw-values-section {
+  background-color: var(--tw-cream);
+  padding: 5rem 0;
+}
+
+.tw-value-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 2rem 1.75rem;
+  height: 100%;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.tw-value-card:hover {
+  box-shadow: 0 8px 28px var(--tw-shadow-md);
+  transform: translateY(-2px);
+}
+
+.tw-value-icon-wrap {
+  color: var(--tw-gold-dark);
+}
+
+.tw-value-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 0.6rem;
+}
+
+.tw-value-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  color: var(--tw-text-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.tw-stats-section {
+  background-color: var(--tw-espresso);
+  padding: 4rem 0;
+}
+
+.tw-stat-item {
+  padding: 1rem;
+}
+
+.tw-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--tw-gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.tw-stat-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(245, 240, 232, 0.65);
+}
+
+/* ============================================================
+   Contact Page
+   ============================================================ */
+.tw-contact-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-contact-info-card {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1.1rem 1.25rem;
+}
+
+.tw-contact-icon-wrap {
+  background-color: var(--tw-espresso);
+  color: var(--tw-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tw-contact-info-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tw-text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.tw-contact-info-value {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--tw-espresso);
+  text-decoration: none;
+}
+a.tw-contact-info-value:hover {
+  color: var(--tw-gold-dark);
+}
+
+.tw-contact-hours {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+.tw-contact-hours-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tw-espresso);
+}
+
+.tw-contact-hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.84rem;
+  color: var(--tw-text-muted);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--tw-border);
+}
+.tw-contact-hours-row:last-child {
+  border-bottom: none;
+}
+
+.tw-closed {
+  color: #c0392b;
+  font-weight: 500;
+}
+
+.tw-contact-form-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px var(--tw-shadow);
+}
+
+.tw-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-form-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tw-espresso);
+  margin-bottom: 0.4rem;
+}
+
+.tw-required {
+  color: #c0392b;
+}
+
+.tw-form-input {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  border: 1.5px solid var(--tw-border);
+  border-radius: 2px;
+  padding: 0.65rem 0.9rem;
+  color: var(--tw-text);
+  background-color: var(--tw-bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.tw-form-input:focus {
+  border-color: var(--tw-gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.18);
+  background-color: var(--tw-white);
+}
+
+.tw-success-state .tw-success-icon {
+  color: #2e7d51;
+}
+
+.tw-success-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-success-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: var(--tw-text-muted);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.tw-footer {
+  background-color: var(--tw-espresso);
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.tw-footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tw-cream);
+}
+
+.tw-footer-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(245, 240, 232, 0.55);
+  line-height: 1.7;
+}
+
+.tw-footer-heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--tw-gold);
+}
+
+.tw-footer-links {
+  margin: 0;
+}
+
+.tw-footer-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(245, 240, 232, 0.6);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+.tw-footer-link:hover {
+  color: var(--tw-gold-light);
+}
+
+.tw-footer-contact {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(245, 240, 232, 0.6);
+  margin: 0;
+}
+
+.tw-footer-icon {
+  color: var(--tw-gold);
+}
+
+.tw-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 4px;
+  color: rgba(245, 240, 232, 0.65);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.tw-social-icon:hover {
+  border-color: var(--tw-gold);
+  color: var(--tw-gold);
+  background-color: rgba(201, 169, 110, 0.08);
+}
+
+.tw-footer-bottom {
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.tw-footer-copy {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(245, 240, 232, 0.4);
+}
+
+/* ============================================================
+   Utilities & Overrides
+   ============================================================ */
+.modal-backdrop {
+  backdrop-filter: none;
+}
+
+body.tw-modal-open {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Product Card — Action Buttons Overlay
+   ============================================================ */
+.tw-card-actions {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.22s, transform 0.22s;
+}
+.tw-product-card:hover .tw-card-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tw-card-action-btn {
+  background-color: var(--tw-white);
+  border: 1.5px solid var(--tw-border);
+  color: var(--tw-text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.18s;
+  box-shadow: 0 2px 8px rgba(44, 24, 16, 0.1);
+}
+.tw-card-action-btn:hover {
+  background-color: var(--tw-espresso);
+  border-color: var(--tw-espresso);
+  color: var(--tw-cream);
+  transform: scale(1.08);
+}
+.tw-card-action-btn.active {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: var(--tw-white);
+}
+.tw-card-action-btn.active:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+/* ============================================================
+   Modal — Wishlist Button
+   ============================================================ */
+.tw-btn-wishlist-modal {
+  background-color: transparent;
+  border: 1.5px solid var(--tw-border);
+  color: var(--tw-text-muted);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.tw-btn-wishlist-modal:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+.tw-btn-wishlist-modal.active {
+  background-color: #fdecea;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.tw-select-error {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #c0392b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tw-cart-error-msg {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  color: #c0392b;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Navbar — Icon Buttons & Badges
+   ============================================================ */
+.tw-nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: rgba(245, 240, 232, 0.8);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.tw-nav-icon-btn:hover {
+  background-color: rgba(245, 240, 232, 0.1);
+  color: var(--tw-cream);
+}
+
+.tw-nav-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--tw-gold);
+  color: var(--tw-espresso);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  line-height: 1;
+}
+
+/* ============================================================
+   Toast Notification
+   ============================================================ */
+.tw-toast-notification {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--tw-espresso);
+  color: var(--tw-cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  white-space: nowrap;
+  animation: toastIn 0.25s ease, toastOut 0.3s ease 2.5s forwards;
+  border-left: 3px solid var(--tw-gold);
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes toastOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ============================================================
+   Cart Page
+   ============================================================ */
+.tw-cart-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-section-icon {
+  color: var(--tw-gold-dark);
+}
+
+.tw-section-icon-wish {
+  color: #e74c3c;
+}
+
+.tw-count-pill {
+  background-color: var(--tw-espresso);
+  color: var(--tw-cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+}
+
+.tw-count-pill-wish {
+  background-color: #e74c3c;
+}
+
+.tw-empty-cart {
+  background-color: var(--tw-cream);
+  border: 1px dashed var(--tw-border);
+  border-radius: 4px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.tw-empty-icon {
+  color: var(--tw-border);
+  margin-bottom: 1rem;
+}
+
+.tw-cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tw-cart-item {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.tw-cart-item-img-wrap {
+  flex-shrink: 0;
+  width: 90px;
+  height: 110px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.tw-cart-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tw-cart-item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.tw-cart-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 0.25rem;
+}
+
+.tw-cart-item-meta {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  color: var(--tw-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.tw-category-pill {
+  display: inline-block;
+  background-color: var(--tw-gold);
+  color: var(--tw-espresso);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+.tw-cart-item-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--tw-espresso);
+}
+
+.tw-qty-control {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid var(--tw-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tw-qty-btn {
+  background: transparent;
+  border: none;
+  color: var(--tw-espresso);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.tw-qty-btn:hover:not(:disabled) {
+  background-color: var(--tw-cream);
+}
+.tw-qty-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.tw-qty-num {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  min-width: 32px;
+  text-align: center;
+  border-left: 1.5px solid var(--tw-border);
+  border-right: 1.5px solid var(--tw-border);
+  line-height: 30px;
+}
+
+.tw-remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--tw-text-muted);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.18s;
+}
+.tw-remove-btn:hover {
+  color: #c0392b;
+}
+
+/* Wishlist Cards */
+.tw-wishlist-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.22s;
+}
+.tw-wishlist-card:hover {
+  box-shadow: 0 6px 24px var(--tw-shadow-md);
+}
+
+.tw-wishlist-img-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.tw-wishlist-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+.tw-wishlist-card:hover .tw-wishlist-img {
+  transform: scale(1.04);
+}
+
+.tw-wishlist-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.35rem;
+}
+
+.tw-wishlist-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 0;
+}
+
+.tw-wishlist-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--tw-gold-dark);
+  margin-bottom: 0;
+}
+
+.tw-remove-btn-wish {
+  background: transparent;
+  border: 1.5px solid var(--tw-border);
+  color: var(--tw-text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.18s;
+}
+.tw-remove-btn-wish:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+  background-color: #fdecea;
+}
+
+/* Order Summary Box */
+.tw-order-summary {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1.75rem;
+}
+
+.tw-summary-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--tw-border);
+}
+
+.tw-summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tw-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: var(--tw-text-muted);
+}
+
+.tw-summary-divider {
+  height: 1px;
+  background-color: var(--tw-border);
+  margin: 0.4rem 0;
+}
+
+.tw-summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--tw-espresso);
+}
+
+.tw-free-shipping {
+  color: #2e7d51;
+  font-weight: 600;
+}
+
+.tw-free-shipping-hint {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  color: var(--tw-gold-dark);
+  background-color: rgba(201, 169, 110, 0.08);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 3px;
+  padding: 0.4rem 0.75rem;
+  margin: 0;
+}
+
+.tw-trust-item {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  color: var(--tw-text-muted);
+  margin-bottom: 0.3rem;
+}
+.tw-trust-item:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   Payment Page
+   ============================================================ */
+.tw-back-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--tw-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tw-back-link:hover {
+  color: var(--tw-espresso);
+}
+
+.tw-checkout-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1.75rem;
+}
+
+.tw-checkout-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+}
+
+.tw-payment-method-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--tw-text-muted);
+  background-color: var(--tw-cream);
+  border: 1.5px solid var(--tw-border);
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  transition: all 0.18s;
+}
+.tw-payment-method-btn:hover {
+  border-color: var(--tw-gold);
+  color: var(--tw-espresso);
+}
+.tw-payment-method-btn.active {
+  background-color: var(--tw-espresso);
+  border-color: var(--tw-espresso);
+  color: var(--tw-cream);
+}
+
+.tw-card-form {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+.tw-card-input {
+  font-family: 'Courier New', monospace !important;
+  letter-spacing: 0.1em;
+}
+
+.tw-alt-payment-info {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+.tw-alt-payment-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: var(--tw-text-muted);
+  margin-bottom: 0;
+}
+
+.tw-bank-chip {
+  display: inline-block;
+  background-color: var(--tw-white);
+  border: 1.5px solid var(--tw-border);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--tw-espresso);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+}
+
+/* Payment page order items */
+.tw-payment-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--tw-border);
+  margin-bottom: 0.5rem;
+}
+
+.tw-payment-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tw-payment-item-img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px;
+  height: 68px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--tw-border);
+}
+
+.tw-payment-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tw-payment-item-qty {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: var(--tw-espresso);
+  color: var(--tw-cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tw-payment-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tw-payment-item-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--tw-espresso);
+  margin-bottom: 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tw-payment-item-meta {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  color: var(--tw-text-muted);
+  margin-bottom: 0;
+}
+
+.tw-payment-item-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tw-espresso);
+  flex-shrink: 0;
+}
+
+/* Order success */
+.tw-order-success {
+  max-width: 520px;
+  padding: 3rem 2rem;
+}
+
+.tw-success-check {
+  color: #2e7d51;
+}
+
+.tw-success-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--tw-espresso);
+  margin-bottom: 1rem;
+}
+
+.tw-success-body {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: var(--tw-text-muted);
+  line-height: 1.7;
+}
+
+.tw-order-ref {
+  background-color: var(--tw-cream);
+  border: 1px solid var(--tw-border);
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+}
+
+.tw-ref-label {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tw-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.tw-ref-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--tw-espresso);
+  letter-spacing: 0.05em;
+}
